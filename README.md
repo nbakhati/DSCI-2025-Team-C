@@ -5,4 +5,4 @@ Capstone Project
 Team of 4
 
 
-change in the branch
+Edit in your branch and submit a pull request.
