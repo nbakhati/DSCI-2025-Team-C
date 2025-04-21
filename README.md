@@ -51,3 +51,4 @@ The libraries used are:
 - lightgbm
 - xgboost
 - catboost
+- Random Forest
