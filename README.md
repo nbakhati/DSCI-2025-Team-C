@@ -33,6 +33,7 @@ Identity Features:
 - DeviceType, DeviceInfo and id_12-id_38: Categorical Features
 
 <h3>Exploratoy Data Analysis (EDA)</h3>
+
 - One of the first things we noticed when conducting EDA was the sparsity of the dataset.
 - The distribution of target variable 'isFraud' has class imbalance problem where it shows that 96.5% of data contains non-fraud transaction where as only 3.5% are fraud.
 - Target variable 'isFraud' is more prevalent in the mobile 'DeviceType' as well as more prevalent in the 'IP_PROXY:ANONYMOUS' based on 'id_31'.
