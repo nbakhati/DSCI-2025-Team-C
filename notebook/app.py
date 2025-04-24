@@ -72,7 +72,7 @@ if uploaded_file:
 
         # Display counts
         st.write(f"**Total Transactions:** {total_transactions}")
-        st.write(f" **Predicted Fraud Cases:** {fraud_cases}")
+        st.write(f"**Predicted Fraud Cases:** {fraud_cases}")
         st.write(f"**Predicted Non-Fraud Cases:** {nonfraud_cases}")
 
         st.write(f" Prediction Results (Rows with FraudProbability > {threshold} are highlighted):")
@@ -88,7 +88,7 @@ if uploaded_file:
 
         csv = convert_df(result_df)
         st.download_button(
-            label="⬇️ Download Predictions as CSV",
+            label="Download Predictions as CSV",
             data=csv,
             file_name='fraud_predictions.csv',
             mime='text/csv'
