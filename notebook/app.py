@@ -64,6 +64,17 @@ if uploaded_file:
         })
 
         st.success(" Prediction completed!")
+        
+        # Count fraud and non-fraud cases
+        total_transactions = len(result_df)
+        fraud_cases = result_df['isFraud'].sum()
+        nonfraud_cases = total_transactions - fraud_cases
+
+        # Display counts
+        st.write(f"**Total Transactions:** {total_transactions}")
+        st.write(f" **Predicted Fraud Cases:** {fraud_cases}")
+        st.write(f"**Predicted Non-Fraud Cases:** {nonfraud_cases}")
+
         st.write(f" Prediction Results (Rows with FraudProbability > {threshold} are highlighted):")
 
         # Apply row highlighting based on the chosen threshold
