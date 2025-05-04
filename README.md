@@ -53,5 +53,7 @@ The libraries used are:
 - catboost
 - Random Forest
 
+<h3>Applied 3 Modeling Approach</h3>
+
 ![image](https://github.com/user-attachments/assets/0bba2749-4d88-41f4-9be9-b65ccfbdc68f)
 
