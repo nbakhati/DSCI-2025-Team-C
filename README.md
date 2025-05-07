@@ -2,9 +2,9 @@
 
 Capstone Project
 
-<h3>Competition Overview</h3>
+<h3>Project Overview</h3>
 
-The main goal is to identify whether each transaction is fraudulent. The dataset is about 590,000 rows and 434 columns.
+The main goal is to identify whether each transaction is fraudulent and calculate their fraud probability. The dataset is about 590,000 rows and 434 columns.
 
 The data is mainly divided into 2 categories, which are joined by TransactionID. Not all transactions have corresponding identity information.
 
@@ -36,16 +36,17 @@ Identity Features:
 Since we need to classify a transaction as fraudulent or non-fraudulent, this is a binary classification problem.
 
 <h4>Performance Metric</h4>
-In fraud detection, both false positives and false negatives carry significant implications, but false negatives—failing to detect fraud—can lead to major financial losses. Metrics like precision and recall address one type of error each, while the F1-score balances them without offering flexibility in prioritization. ROC-AUC, however, evaluates a model’s ability to distinguish between classes across all thresholds and allows for customizable decision boundaries. This makes it an ideal performance metric, providing a comprehensive view of model effectiveness while enabling users to balance sensitivity and specificity based on real-world priorities.
+In fraud detection, both false positives and false negatives have serious consequences, but false negatives, missed fraud cases can result in substantial financial losses. While precision and recall each highlight a specific type of error, the F1-score provides a balanced measure between the two, yet lacks flexibility in emphasizing one over the other. In contrast, the ROC-AUC metric evaluates a model’s ability to distinguish between classes across all possible thresholds. This makes ROC-AUC especially valuable, as it offers a comprehensive assessment of model performance while supporting threshold adjustments to align sensitivity and specificity with real-world risk priorities.
 
 <h3>Exploratoy Data Analysis (EDA)</h3>
 
-- One of the first things we noticed when conducting EDA was the sparsity of the dataset.
-- The distribution of the target variable 'isFraud' has a class imbalance problem, where it shows that 96.5% of the data contains non-fraud transactions, whereas only 3.5% are fraud.
-- Target variable 'isFraud' is more prevalent in the mobile 'DeviceType' as well as more prevalent in the 'IP_PROXY:ANONYMOUS' based on 'id_31'.
-- Another observation that was immediately apparent is the imbalanced nature of the data. This shows that 'TransactionDT' is a timedelta gap, not a timestamp.
-- Dataset has a very high percentage of missing values, especially the V columns.
-- Anonymized columns not only had a high amount of missing data, but their distributions were also not normally distributed.
+One of the initial observations during exploratory data analysis was the sparsity and imbalance of the dataset. 
+- The target variable isFraud showed a significant class imbalance, with approximately 96.5% non-fraud and 3.5% fraud transactions.
+- Fraudulent activity was found to be more prevalent in transactions conducted via mobile devices (DeviceType) and among users flagged as 'IP_PROXY:ANONYMOUS' based on the id_31 feature.
+- Additionally, the TransactionDT field, rather than being a true timestamp, represented a timedelta, highlighting the need for temporal feature engineering.
+- A large portion of the dataset—particularly the anonymized V-series features—contained substantial missing values and showed non-normal distributions, complicating imputation and model interpretability.
+
+These findings informed key preprocessing steps, including imputation strategies, feature transformation, and sampling design to address imbalance and sparsity.
 
 The libraries used are:
 
@@ -58,6 +59,7 @@ The libraries used are:
 - xgboost
 - catboost
 - Random Forest
+- streamlit
 
 <h3>Our Contribution</h3>
 
