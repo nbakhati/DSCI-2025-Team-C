@@ -4,9 +4,9 @@ Capstone Project
 
 <h3>Competition Overview</h3>
 
-The main goal is to identify whether each transaction is fraudulent. Among them, the training set sample is about 590,000 (3.5% of fraud), and the test set sample is about 500,000.
+The main goal is to identify whether each transaction is fraudulent. Among them, the training set sample is about 590,000 (3.5% of fraud).
 
-The data is mainly divided into 2 categories which are joined by TransactionID. Not all transactions have corresponding identity information.
+The data is mainly divided into 2 categories, which are joined by TransactionID. Not all transactions have corresponding identity information.
 
 - transaction data
 - identity data.
@@ -32,6 +32,12 @@ Identity Features:
 - id_01-id_11: Numerical features for identity, which is collected by Vesta and security partners such as device rating, ip_domain rating, proxy rating, etc. Also it recorded behavioral fingerprint like account login times/failed to login times, how long an account stayed on the page, etc.
 - DeviceType, DeviceInfo and id_12-id_38: Categorical Features
 
+<h3>Problem Type</h3>
+Since, we need to classify a transaction as fraudulent or non-fraudulent and hence, this is a binary classification problem.
+
+<h4>Performance Metric</h4>
+In fraud detection, both false positives and false negatives carry significant implications, but false negatives—failing to detect fraud—can lead to major financial losses. Metrics like precision and recall address one type of error each, while the F1-score balances them without offering flexibility in prioritization. ROC-AUC, however, evaluates a model’s ability to distinguish between classes across all thresholds and allows for customizable decision boundaries. This makes it an ideal performance metric, providing a comprehensive view of model effectiveness while enabling users to balance sensitivity and specificity based on real-world priorities.
+
 <h3>Exploratoy Data Analysis (EDA)</h3>
 
 - One of the first things we noticed when conducting EDA was the sparsity of the dataset.
@@ -52,6 +58,14 @@ The libraries used are:
 - xgboost
 - catboost
 - Random Forest
+
+<h3>Contribution</h3>
+- We develop a framework to evaluate how imbalanced data influences model bias and how sampling strategies can mitigate this issue.
+- This research compares various classifiers—including Random Forest, Logistic Regression, XGBoost, and CatBoost—and evaluates them using both accuracy and F1-score.
+- We demonstrate that raw accuracy may be misleading on imbalanced datasets and advocate for F1-score as a more appropriate metric.
+- XGBoost emerged as the most effective model when combined with sampling methods. Among the three data balancing strategies tested—random oversampling, random undersampling, and SMOTE—random oversampling yielded the best results.
+- Utilized the XGBoost using undersampling for deployment due to its strong performance using Streamlit. 
+
 
 <h3>Applied 3 Modeling Approach</h3>
 
