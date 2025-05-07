@@ -60,7 +60,7 @@ uploaded_file = st.file_uploader("Upload CSV file", type="csv")
 
 if uploaded_file:
     data = pd.read_csv(uploaded_file)
-    st.write("### 📄 Uploaded Data Preview:")
+    st.write("### Uploaded Data Preview:")
     st.dataframe(data.head())
 
     if 'TransactionID' not in data.columns:
