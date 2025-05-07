@@ -4,7 +4,7 @@ Capstone Project
 
 <h3>Competition Overview</h3>
 
-The main goal is to identify whether each transaction is fraudulent. Among them, the dataset is about 590,000 rows and 434 columns.
+The main goal is to identify whether each transaction is fraudulent. The dataset is about 590,000 rows and 434 columns.
 
 The data is mainly divided into 2 categories, which are joined by TransactionID. Not all transactions have corresponding identity information.
 
