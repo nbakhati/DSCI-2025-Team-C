@@ -56,7 +56,7 @@ st.write("Upload a CSV file with transaction data to predict fraud risk. Adjust 
 threshold = st.sidebar.slider("Fraud Probability Threshold for Highlighting", min_value=0.0, max_value=1.0, value=BEST_THRESHOLD, step=0.01)
 
 # File uploader
-uploaded_file = st.file_uploader("📂 Upload CSV file", type="csv")
+uploaded_file = st.file_uploader("Upload CSV file", type="csv")
 
 if uploaded_file:
     data = pd.read_csv(uploaded_file)
