@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 # ---------------------------
 # Load ensemble package
 # ---------------------------
-package = joblib.load('streamlit/fraud_xgboost1.pkl')
+package = joblib.load('fraud_xgboost1.pkl')
 models = package['models']               # List of 15 models
 encoders = package['encoders']           # LabelEncoders
 feature_names = package['features']      # Feature list
