@@ -7,7 +7,13 @@ import matplotlib.pyplot as plt
 # ---------------------------
 # Load ensemble package
 # ---------------------------
-package = joblib.load('fraud_xgboost1.pkl')
+import os
+
+current_dir = os.path.dirname(__file__)
+model_path = os.path.join(current_dir, 'fraud_xgboost1.pkl')
+package = joblib.load(model_path)
+
+# package = joblib.load('fraud_xgboost1.pkl')
 models = package['models']               # List of 15 models
 encoders = package['encoders']           # LabelEncoders
 feature_names = package['features']      # Feature list
